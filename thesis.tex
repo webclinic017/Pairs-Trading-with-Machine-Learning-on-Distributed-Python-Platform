@@ -1,0 +1,239 @@
+%% NYU PhD thesis format. Original template created by José Koiller 2007--2008.
+%% Updated by Anshul Vikram Pandey with new design guidelines. 2017-2018
+
+%% Use the first of the following lines during production to
+%% easily spot "overfull boxes" in the output. Use the second
+%% line for the final version.
+\documentclass[12pt,draft,letterpaper]{report}
+% \documentclass[12pt,letterpaper]{report}
+% \documentclass[12pt]{article}
+
+%% Replace the title, name, advisor name, graduation date and dedication below with
+%% your own. Graduation months must be January, May or September.
+\newcommand{\thesistitle}{Pairs Trading with Machine Learning on Distributed Python Platform}
+\newcommand{\thesisauthor}{Yicheng Wang}
+\newcommand{\thesisadvisor}{Song Tang}
+\newcommand{\graddate}{May 2019} % like January XX, May 20XX, September 20XX
+
+%% If you do not want a dedication, scroll down and comment out
+%% the appropriate lines in this file.
+%% \newcommand{\thesisdedication}{To all the Ph.D. pursuing brave souls}
+
+%% The following makes chapters and sections, but not subsections,
+%% appear in the TOC (table of contents). Increase to 2 or 3 to
+%% make subsections or subsubsections appear, respectively. It seems
+%% to be usual to use the "1" setting, however.
+\setcounter{tocdepth}{1}
+
+%% Sectional units up to subsubsections are numbered. To number
+%% subsections, but not subsubsections, decrease this counter to 2.
+\setcounter{secnumdepth}{3}
+
+% Setting a gap between page number and text block
+
+
+%% Page layout (customized to letter paper and NYU requirements):
+\setlength{\oddsidemargin}{.6in}
+\setlength{\textwidth}{5.8in}
+\setlength{\topmargin}{0.5in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{8.3in}
+\setlength{\footskip}{.5in}
+
+%% Use the following commands, if desired, during production.
+%% Comment them out for final version.
+%\usepackage{layout} % defines the \layout command, see below
+%\setlength{\hoffset}{-.75in} % creates a large right margin for notes and \showlabels
+
+%% Controls spacing between lines (\doublespacing, \onehalfspacing, etc.):
+\usepackage{setspace}
+
+%
+%% \usepackage{amsmath}
+%% \usepackage{amssymb}
+\usepackage{xspace}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{microtype}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage{url}
+\usepackage{fancyhdr}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[final]{graphicx}
+\usepackage[final]{listings}
+\usepackage{color}
+% \newfloat{algorithm}{t}{lop}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[LE]{}
+\fancyhead[RO]{}
+\fancyhead[RE]{}
+\fancyhead[LO]{}
+\fancyfoot[C]{}
+\rhead{\thepage}
+
+\fancypagestyle{plain}{%
+\fancyhf{}
+\rhead{\thepage}
+}
+
+\setlength{\headheight}{20pt} 
+
+%% Use the line below for official NYU version, which requires
+%% double line spacing. For all other uses, this is unnecessary,
+%% so the line can be commented out.
+\onehalfspacing % requires package setspace, invoked above
+
+%% Each of the following lines defines the \com command, which produces
+%% a comment (notes for yourself, for instance) in the output file.
+%% Example:    \com{this will appear as a comment in the output}
+%% Choose (uncomment) only one of the three forms:
+%\newcommand{\com}[1]{[/// {#1} ///]}       % between [/// and ///].
+\newcommand{\com}[1]{\marginpar{\tiny #1}} % as (tiny) margin notes
+%\newcommand{\com}[1]{}                     % suppress all comments.
+
+
+
+%% Cross-referencing utilities. Use one or the other--whichever you prefer--
+%% but comment out both lines for final version.
+%\usepackage{showlabels}
+%\usepackage{showkeys}
+% \pagestyle{headings}
+
+\begin{document}
+%% Produces a test "layout" page, for "debugging" purposes only.
+%% Comment out for final version.
+%\layout % requires package layout (see above, on this same file)
+%% Sets page numbering to "roman style" i, ii, iii, iv, etc:
+
+%%%%%% Cover page %%%%%%%%%%%
+%% Sets page numbering to "roman style" i, ii, iii, iv, etc:
+\pagenumbering{roman}
+\thispagestyle{empty}
+\begin{center}
+{\bfseries 
+  {\large\thesistitle}
+  \vspace{1in}
+  
+ {\large {\bf CAPSTONE}}\\
+  \vspace{.5in}
+  
+  \begin{doublespace}
+  {\large  
+  Submitted in Partial Fulfillment of\\
+  % \vspace{.1in}
+  the Requirements for\\
+  % \vspace{.1in}
+  the Degree of\\}
+  \end{doublespace}
+  \vspace{.5in}
+  
+  {\large Master of Science (Finance and Risk Engineering)}\\
+  \vspace{.5in}
+  
+  at the \\
+  \vspace{.2in}
+  
+  {\large
+  NEW YORK UNIVERSITY\\
+  \vspace{-0.05in}
+  TANDON SCHOOL OF ENGINEERING\\
+  }
+  \vspace{.2in}
+  
+  by
+  \vspace{.5in}
+
+  {\large\thesisauthor}
+  \vspace{.5in}
+  % \vfill
+
+  {\large\graddate}
+}
+
+\end{center}
+
+\newpage
+
+%%%%%%%%%%%%%% Ackknowlegment %%%%%%%%%%%%%%%%%
+%% Comment out the following lines if you do not want to acknowledge
+%% anyone's help...
+\section*{Acknowledgements}
+\addcontentsline{toc}{section}{Acknowledgements}
+\input{acknowledge}
+\newpage
+
+
+%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%
+\section*{}
+\begin{center}
+{\bfseries 
+  %{\large\thesistitle}
+  \vspace{.25in}  
+  {\bf ABSTRACT}\\
+  \vspace{.25in}
+}
+\end{center}
+\addcontentsline{toc}{section}{Abstract}
+\input{abstract}
+\newpage
+
+%%%% Table of Contents %%%%%%%%%%%%
+\tableofcontents
+% \clearpage
+% \pagestyle{headings}
+
+
+%%%%% Body of thesis starts %%%%%%%%%%%%
+\pagenumbering{arabic} % switches page numbering to arabic: 1, 2, 3, etc.
+
+%% Introduction. If your thesis has no introduction, or chapter 1 is
+%% meant to be the introduction, then comment out the lines below.
+%% \section*{Introduction}\addcontentsline{toc}{section}{Introduction}
+%\input{intro}
+
+%%If your thesis has different "Parts", use commands such as the following:
+\input{introduction/introduction}
+
+%
+\input{background/background}
+
+%
+\input{data/data}
+
+%
+\input{model/model.tex}
+
+%
+\input{client_server/client_server}
+
+%
+\input{simulated_trading/simulated_trading}
+
+%
+\input{performance_analysis/performance_analysis}
+
+%
+\input{conclusions/conclusions}
+
+%%%%% Appendices start %%%%%%%%%%%%%%%%
+%% Comment out the following line if your thesis has no appendix
+\appendix
+\input{appendix/app1}
+
+%% Note: If your thesis has more than one appendix, NYU requires a "list of
+%% appendices" page before the body of the thesis. I don't provide the tools
+%% to create that here, so you're on your own for that one... Sorry.
+%\input{app2}
+
+%%%% Input bibliography file %%%%%%%%%%%%%%%
+% \input{thesis}
+\bibliographystyle{abbrv}
+\bibliography{biblio,background/background} % add intelligently
+
+\end{document}
