@@ -50,11 +50,11 @@ Function get\_daily\_data() takes in ticker name, start date, end date, data url
 
 \section{Database Design}
 
-Our database design comprises of 504 tables with two entity relationship, as shown in Figure 3.1. First, each of 500 ticker database with "symbol" and "date" as primary key and "symbol" as foreign key maps to "name" as primary key from sp500 constituents database. Second, table "pairprices" and table "trades" both have "symbol1", "symbol2" that reference to "ticker1", "ticker2" in table stockpairs.
+Our database design comprises of 504 tables with two entity relationship, as shown in Figure 3.1. First, each of 500 ticker database with "symbol" and "date" as primary key and "symbol" as foreign key maps to "symbol" as primary key from sp500 constituents database. Second, table "pairprices" and table "trades" both have "symbol1", "symbol2" that reference to "ticker1", "ticker2" in table stockpairs.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.45]{data/images/database.jpg}
+\includegraphics[scale=0.45]{data/images/database.png}
 \caption{Database Design}
 \label{fig:database}
 \end{figure}

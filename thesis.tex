@@ -4,8 +4,8 @@
 %% Use the first of the following lines during production to
 %% easily spot "overfull boxes" in the output. Use the second
 %% line for the final version.
-\documentclass[12pt,draft,letterpaper]{report}
-% \documentclass[12pt,letterpaper]{report}
+% \documentclass[12pt,draft,letterpaper]{report}
+\documentclass[12pt,letterpaper]{report}
 % \documentclass[12pt]{article}
 
 %% Replace the title, name, advisor name, graduation date and dedication below with
@@ -64,7 +64,7 @@
 \usepackage[english]{babel}
 \usepackage[final]{graphicx}
 \usepackage[final]{listings}
-\usepackage{color}
+\usepackage{bookmark}
 % \newfloat{algorithm}{t}{lop}
 
 \pagestyle{fancy}
@@ -97,6 +97,9 @@
 \newcommand{\com}[1]{\marginpar{\tiny #1}} % as (tiny) margin notes
 %\newcommand{\com}[1]{}                     % suppress all comments.
 
+%% This inputs your auxiliary file with \usepackage's and \newcommand's:
+%% It is assumed that that file is called "definitions.tex".
+\input{definitions}
 
 
 %% Cross-referencing utilities. Use one or the other--whichever you prefer--
